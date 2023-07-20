@@ -1,4 +1,3 @@
-import { useState } from "react";
 const List = () => {
   var items = [
     { id: 0 },

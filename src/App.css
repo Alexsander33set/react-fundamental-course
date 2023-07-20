@@ -9,8 +9,8 @@ main {
   color: white;
   font-size: 24px;
   min-height: 100vh;
-  padding: 5rem 0;
-  
+  padding: 2rem 0;
+  line-height: 1.5;
 }
 
 
