@@ -10,6 +10,13 @@ function App() {
   const [todo, setTodo] = useState([]);
   const [loading, setloading] = useState(false);
   
+  function handleNewTodo(e) {
+    e.preventDefault();
+    console.log(title);
+    setTitle('')
+    
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,10 +25,16 @@ function App() {
       <main>
         <div id='todoApp'>
           <header><h2>Todo</h2></header>
-          <div className='formTodo'>
-            Form add task
-          </div>
-          <div>
+          <form className='formTodo' onSubmit={handleNewTodo}>
+            Nova Task
+            <div>
+              <label htmlFor='todoTitle'>Titulo:</label>
+              <input id='todoTitle' name='title' placeholder='título' required
+                    onChange={(e)  => setTitle(e.target.value)} value={title || ''}  />
+            </div>
+            <button type='submit'>Enviar</button>
+          </form>
+          <div className='todoList'>
             <h2>Lista de tarefas</h2>
             <p>{todo.length !== 0 ? todo.length + " Tasks" : "Nenhuma tarefa registrada" }</p>
           </div>
